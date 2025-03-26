@@ -22,6 +22,7 @@ function getAdvice(){
     .then(response => response.json())
     .then(
         data => {
+            spinner.style.display = 'none';
             adviceElement.innerText = data.slip.advice;
             console.log(data.slip.advice);
         }
