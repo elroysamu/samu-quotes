@@ -29,6 +29,7 @@ function getAdvice(){
             console.log(data.slip.advice);
         }
     )
+    .catch(error => console.log(error));
 }
 
 function getJoke(){
@@ -49,4 +50,5 @@ function getJoke(){
             console.log(data);
         }
     )
+    .catch(error => console.log(error));
 }
