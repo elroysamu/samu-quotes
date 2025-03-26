@@ -1,49 +1,49 @@
 const spinner = document.getElementById('spinner');
+const board = document.getElementById("board");
+const board2 = document.getElementById("board2");
 
 function getFact() {
-    const factElement = document.getElementById("board");
+    board2.innerHTML = "";
     spinner.style.display = 'block';
-    factElement.innerHTML = "Samu getting your fact...";
+    board.innerHTML = "Samu getting your fact...";
     fetch("https://catfact.ninja/fact")
         .then(response => response.json())
         .then(data => {
             spinner.style.display = 'none';
-            factElement.innerText = data.fact;
+            board.innerText = data.fact;
             console.log(data.fact);
         })
         .catch(error => console.error(error));
 }
 
 function getAdvice(){
+    board2.innerHTML = "";
     spinner.style.display = 'block';
-    const adviceElement = document.getElementById("board");
-    adviceElement.innerHTML = "Samu getting your advice...";
+    board.innerHTML = "Samu getting your advice...";
     fetch("https://api.adviceslip.com/advice")
     .then(response => response.json())
     .then(
         data => {
             spinner.style.display = 'none';
-            adviceElement.innerText = data.slip.advice;
+            board.innerText = data.slip.advice;
             console.log(data.slip.advice);
         }
     )
 }
 
 function getJoke(){
+    board2.innerHTML = "";
     spinner.style.display = 'block';
-    const board = document.getElementById("board");
     board.innerHTML = "Samu getting your joke...";
     fetch("https://v2.jokeapi.dev/joke/Programming")
     .then(response => response.json())
     .then(
         data => {
             spinner.style.display = 'none';
-            const board2 = document.getElementById("board2");
             if(data.setup){
                 board.innerHTML = data.setup;
                 board2.innerHTML = data.delivery;
             }else{
-                board2.innerHTML = "";
                 board.innerHTML = data.joke;
             }
             console.log(data);
