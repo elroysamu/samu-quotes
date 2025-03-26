@@ -21,17 +21,23 @@
         }
     </style>
 </head>
-<body bgcolor="gray">
-    <center><h1>Samu's Quotes</h1></center>
-    <center><button onclick="getFact()">Get Cat Fact</button></center>
+<body style="background-color: gray; text-align: center;">
+    <h1>Samu's Quotes</h1>
+    
+    <button onclick="getFact()">Cat Fact</button>
+    <br><br>
+    
+    <button onclick="getAdvice()">Life Advice</button>
+    <br><br>
+    
+    <button onclick="getJoke()">Programming Joke</button>
+    <br><br>
+    
+    <div class="spinner" id="spinner" style="margin: 0 auto;"></div>
     <br>
-    <center><button onclick="getAdvice()">Get Life Advice</button></center>
-    <br>
-    <center><button onclick="getJoke()">Get Programming Joke</button></center>
-    <br>
-    <center><div class="spinner" id="spinner"></div></center>
-    <center><p id="board"></p></center>
-    <center><p id="board2"></p></center>
+    
+    <p id="board"></p>
+    <p id="board2"></p>
 
     <script src="samu.js"></script>
 </body>
